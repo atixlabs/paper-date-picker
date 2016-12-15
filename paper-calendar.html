@@ -315,8 +315,10 @@
       },
       ready: function() {
         this._updateToday();
-        this.currentMonth = this.date.getMonth() + 1;
-        this.currentYear = this.date.getFullYear();
+        if(this.date){
+          this.currentMonth = this.date.getMonth() + 1;
+          this.currentYear = this.date.getFullYear();
+        }
         this._transitionEvent = this._whichTransitionEnd();
       },
       dateFormat: function(date, format, locale) {
